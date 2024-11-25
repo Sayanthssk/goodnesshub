@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">Camp Name</label>
+        <input type="text" name="campname"><br>
+        <label for="">Camp Number</label>
+        <input type="text" name="campno"><br>
+        <label for="">place</label>
+        <input type="text" name="place">
+        <label for="">username</label>
+        <input type="text" name="username">
+        <label for="">password</label>
+        <input type="password" name="password">
+        <label for="">Proof</label>
+        <input type="file" name="proof">
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

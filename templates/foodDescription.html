@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Description</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+    <label for="">Food category</label>
+    <input type="text" placeholder="Food category" name="foodCategory"><br>
+    <label>Description</label>
+    <textarea placeholder="Enter food description" name="description"></textarea><br>
+    <label>Food status</label>
+    <select name="foodStatus" id="">
+        <option value="pending">pending</option>
+        <option value="delivered">delivered</option>
+    </select><br>
+    <label>food Name</label>
+    <input type="text" name="foodName"> <br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

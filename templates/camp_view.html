@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>camp Name</td>
+            <td>camp number</td>
+            <td>place</td>
+            <td>proof</td>
+            <td></td>
+        </tr>
+        {% for i in s %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.campname}}</td>
+            <td>{{i.campno}}</td>
+            <td>{{i.place}}</td>
+            <td>
+                <img src="{{i.proof.url}}" alt="proof" height="50px" width="50px">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

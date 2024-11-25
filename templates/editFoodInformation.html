@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Description</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+    <label for="">Food category</label>
+    <input type="text" placeholder="Food category" name="foodCategory" value="{{ foodInformation.foodCategory }}"><br>
+    <label>Description</label>
+    <textarea placeholder="Enter food description" name="description" >{{ foodInformation.description }}</textarea><br>
+    <label>Food status</label>
+    <select name="foodStatus" id="">
+        <option value="pending" {% if foodInformation.foodStatus == 'pending' %} selected {% endif %}>pending</option>
+        <option value="delivered" {% if foodInformation.foodStatus == 'delivered' %} selected {% endif %}>delivered</option>        
+    </select><br>
+    <label>food Name</label>
+    <input type="text" name="foodName" value="{{ foodInformation.foodName }}"> <br>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>

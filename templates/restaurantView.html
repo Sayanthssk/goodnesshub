@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>Restaurant Name</td>
+            <td>Location</td>
+            <td>Ph No</td>
+            <td>Type</td>
+            <td>pincode</td>
+            <td>about</td>
+            <td>state</td>
+            <td>status</td>
+            <td></td>
+        </tr>
+        {% for i in s %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{i.restaurantName}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.phoneNumber}}</td>
+            <td>{{i.type}}</td>
+            <td>{{i.pincode}}</td>
+            <td>{{i.about}}</td>
+            <td>{{i.state}}</td>
+            <td>{{i.login_id.status}}</td>
+            <td>
+                {% if i.login_id.status == 'DEACTIVE' %}<a href="/myapp/accept/{{i.id}}/">accept</a>{% endif %}
+                {% if i.login_id.status == 'ACTIVE' %}<a href="/myapp/reject/{{i.id}}">Block</a>{% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

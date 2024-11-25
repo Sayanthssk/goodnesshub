@@ -1,0 +1,36 @@
+<!-- view_camp_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Profile</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Camp Profile</h2>
+        <div class="card">
+            <div class="card-header">
+                Camp Information
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ camp_profile.campname }}</h5>
+                <p class="card-text"><strong>Camp Number:</strong> {{ camp_profile.campno }}</p>
+                <p class="card-text"><strong>Place:</strong> {{ camp_profile.place }}</p>
+                <p class="card-text"><strong>Status:</strong> {{ camp_profile.status }}</p>
+                <p class="card-text"><strong>Proof of Registration:</strong></p>
+                {% if camp_profile.proof %}
+                    <a href="{{ camp_profile.proof.url }}" target="_blank">View Proof</a>
+                {% else %}
+                    <p>No proof uploaded.</p>
+                {% endif %}
+            </div>
+            <div class="card-footer text-muted">
+                Camp ID: {{ camp_profile.id }}
+            </div>
+        </div>
+        <a href="{% url 'your_previous_page_name' %}" class="btn btn-primary mt-3">Back</a>
+    </div>
+</body>
+</html>
